@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.prezi.android.emlek.app.EmlekMainActivity" >
+    <item android:id="@+id/action_camera"
+          android:icon="@drawable/ic_action_camera"
+          android:title="@string/action_photo"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_video"
+          android:icon="@drawable/ic_action_video"
+          android:title="@string/action_video"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_text"
+          android:icon="@drawable/ic_action_text"
+          android:title="@string/action_text"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_voice"
+          android:icon="@drawable/ic_action_voice"
+          android:title="@string/action_voice"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_attach"
+          android:icon="@drawable/ic_action_attach"
+          android:title="@string/action_attach"
+          android:showAsAction="ifRoom" />
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:showAsAction="never" />
+</menu>
