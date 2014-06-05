@@ -1,4 +1,4 @@
-package com.prezi.android.emlek.app;
+package com.emlek.android.app;
 
 import android.view.View;
 import android.view.ViewGroup;

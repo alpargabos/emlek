@@ -1,4 +1,4 @@
-package com.prezi.android.emlek.app;
+package com.emlek.android.app;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import com.capricorn.RayMenu;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -45,7 +47,7 @@ public class EmlekMainActivity extends Activity {
                     .commit();
         }
 
-    }
+	}
 
 
     @Override
@@ -187,5 +189,30 @@ public class EmlekMainActivity extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_emlek_main, container, false);
             return rootView;
         }
+
+		@Override
+		public void onActivityCreated(Bundle savedInstanceState) {
+			super.onActivityCreated(savedInstanceState);
+
+			//ArcMenu menu = (ArcMenu) getActivity().findViewById(R.id.arc_menu);
+
+			RayMenu menu = (RayMenu) getActivity().findViewById(R.id.ray_menu);
+			int[] ITEM_DRAWABLES = {R.drawable.ic_action_video, R.drawable.ic_action_camera, R.drawable.ic_action_attach, R.drawable.ic_action_text, R.drawable.ic_action_voice};
+			final int itemCount = ITEM_DRAWABLES.length;
+			for (int i = 0; i < itemCount; i++) {
+				ImageView item = new ImageView(getActivity());
+				item.setImageResource(ITEM_DRAWABLES[i]);
+
+				final int position = i;
+				menu.addItem(item, new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						Toast.makeText(getActivity(), "position:" + position, Toast.LENGTH_SHORT).show();
+					}
+				});// Add a menu item
+			}
+		}
+
     }
 }
